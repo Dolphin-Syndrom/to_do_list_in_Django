@@ -1,4 +1,4 @@
-# ToDo List in Django Python Repository
+# ToDo List in Django
 
 ## Overview
 
