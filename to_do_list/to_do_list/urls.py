@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home.views import home, delete_task
+from django.contrib.auth.views import LoginView, LogoutView
+
 
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('', include('home.urls')),
-     path('delete/<int:task_id>/', delete_task, name='delete_task'),
-
+    path('delete/<int:task_id>/', delete_task, name='delete_task')
 ]
